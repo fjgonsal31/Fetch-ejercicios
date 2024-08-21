@@ -25,8 +25,23 @@ function obtenerEmpleados(){
 async function obtenerEmpleados2(){
     const urlEmpleados = '../empleados.json';
 
-    const resultado = await fetch(urlEmpleados);
-    const datos = await resultado.json();
+    try {
+        const resultado = await fetch(urlEmpleados);
+        console.log(resultado)
+        if(resultado.status === 200){
+            const datos = await resultado.json();
+            console.log(datos.empleados)
+        }else if(resultado.status === 404){
+            console.log('No se encuentran los datos')
+        }else{
+            console.log('Hubo un error')
+        }
+        
+
+    } catch (error) {
+        console.log(error)
+    }
+
 }
 
-obtenerEmpleados();
+obtenerEmpleados2();
