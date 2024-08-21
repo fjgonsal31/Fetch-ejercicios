@@ -36,7 +36,6 @@ async function obtenerEmpleados2(){
         }else{
             console.log('Hubo un error')
         }
-        
 
     } catch (error) {
         console.log(error)
