@@ -20,6 +20,7 @@ function obtenerEmpleados(){
                 console.log(`Id: ${empleado.id} -- Nombre: ${empleado.nombre} -- Puesto: ${empleado.puesto}`);
             });
         })
+        .catch( error => console.log(error));
 }
 
 async function obtenerEmpleados2(){
@@ -43,4 +44,4 @@ async function obtenerEmpleados2(){
 
 }
 
-obtenerEmpleados2();
+obtenerEmpleados();
