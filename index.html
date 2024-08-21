@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial de Fetch y JSON en JavaScript</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <h1>Tutorial de Fetch y JSON en JavaScript</h1>
+    
+    <h2>¿Qué es Fetch?</h2>
+    <p>Fetch es una API moderna de JavaScript que proporciona una interfaz para hacer peticiones de red. Es más poderosa y flexible que las antiguas XMLHttpRequest.</p>
+    
+    <h2>Uso básico de Fetch</h2>
+    <div class="example">
+        <pre><code><span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/datos'</span>)
+  .<span class="function">then</span>(response => response.json())
+  .<span class="function">then</span>(data => console.log(data))
+  .<span class="function">catch</span>(error => console.error(<span class="string">'Error:'</span>, error));</code></pre>
+    </div>
+    
+    <h2>¿Qué es JSON?</h2>
+    <p>JSON (JavaScript Object Notation) es un formato ligero de intercambio de datos. Es fácil de leer y escribir para humanos y fácil de analizar y generar para máquinas.</p>
+    
+    <h2>Ejemplo de JSON</h2>
+    <div class="example">
+        <pre><code>{
+  <span class="string">"nombre"</span>: <span class="string">"Juan Pérez"</span>,
+  <span class="string">"edad"</span>: 30,
+  <span class="string">"ciudad"</span>: <span class="string">"Madrid"</span>,
+  <span class="string">"hobbies"</span>: [<span class="string">"leer"</span>, <span class="string">"viajar"</span>, <span class="string">"música"</span>]
+}</code></pre>
+    </div>
+    
+    <h2>Fetch y JSON juntos</h2>
+    <p>Fetch se usa a menudo para obtener datos JSON de una API. Aquí hay un ejemplo completo:</p>
+    <div class="example">
+        <pre><code><span class="keyword">async function</span> <span class="function">obtenerDatos</span>() {
+  <span class="keyword">try</span> {
+    <span class="keyword">const</span> response = <span class="keyword">await</span> <span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/usuarios'</span>);
+    <span class="keyword">const</span> datos = <span class="keyword">await</span> response.json();
+    console.log(datos);
+  } <span class="keyword">catch</span> (error) {
+    console.error(<span class="string">'Error al obtener datos:'</span>, error);
+  }
+}
+
+<span class="function">obtenerDatos</span>();</code></pre>
+    </div>
+    
+    <h2>Enviar datos con Fetch</h2>
+    <p>También puedes usar Fetch para enviar datos JSON a un servidor:</p>
+    <div class="example">
+        <pre><code><span class="keyword">const</span> nuevoUsuario = {
+  nombre: <span class="string">"Ana García"</span>,
+  edad: 28
+};
+
+<span class="function">fetch</span>(<span class="string">'https://api.ejemplo.com/usuarios'</span>, {
+  method: <span class="string">'POST'</span>,
+  headers: {
+    <span class="string">'Content-Type'</span>: <span class="string">'application/json'</span>,
+  },
+  body: <span class="function">JSON.stringify</span>(nuevoUsuario)
+})
+.<span class="function">then</span>(response => response.json())
+.<span class="function">then</span>(data => console.log(<span class="string">'Éxito:'</span>, data))
+.<span class="function">catch</span>((error) => console.error(<span class="string">'Error:'</span>, error));</code></pre>
+    </div>
+    
+    <h2>Conclusión</h2>
+    <p>Fetch y JSON son herramientas fundamentales en el desarrollo web moderno. Fetch proporciona una manera fácil de hacer peticiones de red, mientras que JSON es un formato de datos versátil y ampliamente utilizado. Juntos, permiten una comunicación eficiente entre el cliente y el servidor en aplicaciones web.</p>
+
+    <script src="js/funciones.js"></script>
+</body>
+</html>
