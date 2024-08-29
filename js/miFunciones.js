@@ -21,18 +21,17 @@ async function getLanzamientos() {
   const datos = await resultado.json();
 
   //   console.log(resultado);
-//   console.log(datos);
+  //   console.log(datos);
 
-  ol.innerHTML = datos.map((lanzamiento) => {
-    let texto = "";
-    if (
-      lanzamiento.launch_failure_details &&
-      lanzamiento.launch_failure_details.reason
-    ) {
-      texto = `${lanzamiento.mission_name}: ${lanzamiento.launch_failure_details.reason} <br>`;
-    }
-    return texto;
-  }).join("");
+  ol.innerHTML = datos
+    .map((lanzamiento) => {
+      let texto = "";
+      if (lanzamiento.launch_failure_details?.reason) {
+        texto = `${lanzamiento.mission_name}: ${lanzamiento.launch_failure_details.reason} <br>`;
+      }
+      return texto;
+    })
+    .join("");
 }
 
 getLanzamientos();
