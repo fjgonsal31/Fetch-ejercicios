@@ -1,24 +1,43 @@
 {
-    "empleados" : [
-        {
-            "id" : 1,
-            "nombre" : "Antonia",
-            "puesto" : "Docente"
-        },
-        {
-            "id" : 2,
-            "nombre" : "Mariano",
-            "puesto" : "Administrativo"
-        },
-        {
-            "id" : 3,
-            "nombre" : "Juan",
-            "puesto" : "Programador web"
-        },
-        {
-            "id" : 4,
-            "nombre" : "Laura",
-            "puesto" : "Diseño web"
-        }
-    ]
+  "empleados": [
+    {
+      "id": 1,
+      "nombre": "Antonia",
+      "puesto": "Docente"
+    },
+    {
+      "id": 2,
+      "nombre": "Mariano",
+      "puesto": "Administrativo"
+    },
+    {
+      "id": 3,
+      "nombre": "Juan",
+      "puesto": "Programador web"
+    },
+    {
+      "id": 4,
+      "nombre": "Laura",
+      "puesto": "Diseño web"
+    }
+  ],
+
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Pepe"
+    },
+    {
+      "id": 2,
+      "nombre": "José"
+    },
+    {
+      "id": 3,
+      "nombre": "Juan"
+    },
+    {
+      "id": 4,
+      "nombre": "Rosa"
+    }
+  ]
 }
